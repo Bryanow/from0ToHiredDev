@@ -3,13 +3,15 @@
 //cartao da lista
 // - passo 1 - dar um jeito de pegar o elemento HTML da seta avancar
 const btnAvancar = document.getElementById('btn-avancar');
-
-const cartoes = document.querySelectorAll('.cartao')
+const cartoes = document.querySelectorAll('.cartao');
+// definindo contador
+let cartaoAtual = 0;
 
 //  - passo 2 - dar um jeito de identificar o clique do usuário na seta avançar
 btnAvancar.addEventListener('click', function () {
-    //- passo 3 - fazer aparecer o próximo cartão da lista 
-
+    //- passo 3 - fazer aparecer o próximo cartão da lista
+    cartaoAtual ++;
+    cartoes[cartaoAtual].classList.add('selecionado');
 });
 
 
