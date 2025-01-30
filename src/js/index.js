@@ -5,18 +5,16 @@ const cartoes = document.querySelectorAll('.cartao');
 // definindo contador
 let cartaoAtual = 0;
 
+
 btnAvancar.addEventListener('click', function() {
-
     hide_selected_card();
-
-    //- passo 3 - fazer aparecer o próximo cartão da lista
+  
     if (cartaoAtual === cartoes.length - 1) {
         cartaoAtual = 0;
     } else {
         cartaoAtual ++;
     }
     showSelectedCard(cartaoAtual);
-
 });
 
 btnVoltar.addEventListener('click', function() {
