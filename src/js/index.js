@@ -9,24 +9,17 @@ const cartoes = document.querySelectorAll('.cartao');
 let cartaoAtual = 0;
 
 //  - passo 2 - dar um jeito de identificar o clique do usuário na seta avançar
-btnAvancar.addEventListener('click', function () {
-    if (cartaoAtual === cartoes.length -1) return;
-    const cartaoSelecionado = document.querySelector('selecionado')
-    cartoes[cartaoAtual + 1].classList.remove('selecionado');
+btnAvancar.addEventListener('click', function() {
+    if(cartaoAtual === cartoes.length - 1) return;
+
+    const cartaoSelecionado = document.querySelector('.selecionado')
+    cartaoSelecionado.classList.remove('selecionado')
+
     //- passo 3 - fazer aparecer o próximo cartão da lista
     cartaoAtual ++;
     cartoes[cartaoAtual].classList.add('selecionado');
-    cartoes[cartaoAtual - 1].classList.remove('selecionado');
+
 });
-
-btnVoltar.addEventListener('click', function() {
-    cartaoAtual --;
-    cartoes[cartaoAtual].classList.add('selecionado');
-});
-
-
-// - passo 4 - buscar o cartão que esta selecionado e esconder
-
 
 
 /*
@@ -37,3 +30,12 @@ anterior da lista
   - passo 3 - fazer aparecer o cartão anterior da lista
   - passo 4 - buscar o cartão que esta selecionado e esconder
 */
+btnVoltar.addEventListener('click', function() {
+    if (cartaoAtual === 0) return;
+
+    const cartaoSelecionado = document.querySelector('.selecionado')
+    cartaoSelecionado.classList.remove('selecionado')
+
+    cartaoAtual --;
+    cartoes[cartaoAtual].classList.add('selecionado');
+});
