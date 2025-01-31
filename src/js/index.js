@@ -13,6 +13,7 @@ cartoes.forEach(cartao => {
         cartao.classList.toggle('virar');
         cartaVirada.classList.toggle('mostrar-fundo-carta');
 
+        // escondr a descrição para ocupar menos espaço em telas menores
         const descricao = cartao.querySelector('.descricao');
         descricao.classList.toggle('esconder')
     });
