@@ -5,6 +5,18 @@ const cartoes = document.querySelectorAll('.cartao');
 // definindo contador
 let cartaoAtual = 0;
 
+cartoes.forEach(cartao => {
+    cartao.addEventListener('click', function () {
+        const cartaVirada = cartao.querySelector('.carta-virada');
+
+        //virar o cartão
+        cartao.classList.toggle('virar');
+        cartaVirada.classList.toggle('mostrar-fundo-carta');
+
+        const descricao = cartao.querySelector('.descricao');
+        descricao.classList.toggle('esconder')
+    });
+});
 
 btnAvancar.addEventListener('click', function() {
     hide_selected_card();
@@ -27,6 +39,8 @@ btnVoltar.addEventListener('click', function() {
     }
     showSelectedCard(cartaoAtual);
 });
+
+
 
 function showSelectedCard(cartaoAtual) {
     cartoes[cartaoAtual].classList.add('selecionado');
